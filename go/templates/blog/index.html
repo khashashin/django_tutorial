@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    <title>Blog</title>
+{% endblock %}
+{% block extracss %}
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    {% if user.is_authenticated %}
+        <a href="{% url 'blog:post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span>+</a>
+    {% endif %}
+    <h1><a href="{% url 'home:index' %}">Home</a></h1>
+</div>
+
+  {% include "blog/post_list.html" %}
+
+  {% block blogcontent %}
+  {% endblock %}
+
+{% endblock %}
