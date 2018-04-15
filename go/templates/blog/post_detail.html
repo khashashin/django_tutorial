@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'blog/index.html' %}
 
-{% block content %}
+{% block blogcontent %}
     <div class="post">
         {% if user.is_authenticated %}
             <a class="btn btn-default float-right" href="{% url 'blog:post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
