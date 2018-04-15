@@ -24,7 +24,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
-    re_path(r'', include('blog.urls')),
+    path('', include('home.urls')),
+    path('blog/', include('blog.urls')),
     path('catalog/', include('catalog.urls')),
     path('test/', RedirectView.as_view(url='/catalog/', permanent=True)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
