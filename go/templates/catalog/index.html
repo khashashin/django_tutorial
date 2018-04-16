@@ -12,7 +12,7 @@
     <li><strong>Books:</strong> {{ num_books }}</li>
     <li><strong>Copies:</strong> {{ num_instances }}</li>
     <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
-    <li><strong>Authors:</strong> {{ num_authors }}</li>
+    <li><a href="{% url 'catalog:authors' %}"><strong>Authors:</strong></a> {{ num_authors }}</li>
   </ul>
 
   {% include 'catalog/book_list.html' %}
@@ -20,4 +20,19 @@
   {% block catalogcontent %}
 
   {% endblock %}
+  {% if is_paginated %}
+      <div class="pagination">
+          <span class="page-links">
+              {% if page_obj.has_previous %}
+                  <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+              {% endif %}
+              <span class="page-current">
+                  Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+              </span>
+              {% if page_obj.has_next %}
+                  <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+              {% endif %}
+          </span>
+      </div>
+  {% endif %}
 {% endblock %}
