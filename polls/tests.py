@@ -153,6 +153,17 @@ class QuestionResultViewTests(TestCase):
 
 
 class QuestionsAndChoices(TestCase):
+
+    def setUp(self):
+        self.user = User.objects.create_user(username='user', password='top_secret')
+
+    def test_logged_in_user_can_see_questions_without_choices(self):
+        #first make an empty question to use as a test
+        empty_question = create_question(question_text='Empty question', days=-1)
+        self.client.force_login(self.user)
+        response = self.client.get(reverse('polls:index'))
+        self.assertQuerysetEqual(response.context['latest_question_list'], [])
+
     def test_question_without_choices(self):
         """
         A Question without choices should not be displayed
