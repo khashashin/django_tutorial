@@ -1,4 +1,5 @@
-{% block catalogcontent %}
+{% extends 'base.html' %}
+{% block content %}
   <h1>Title: {{ book.title }}</h1>
 
   <p><strong>Author:</strong> <a href="">{{ book.author }}</a></p> <!-- author detail link not yet defined -->

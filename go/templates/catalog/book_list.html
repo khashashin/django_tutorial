@@ -1,9 +1,8 @@
-<h1>Book List</h1>
+<h2>Book List</h2>
 
-{% if book_list %}
+{% if display_books %}
 <ul>
-
-  {% for book in book_list %}
+  {% for book in display_books %}
   <li>
     <a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})
   </li>
