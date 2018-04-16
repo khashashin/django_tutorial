@@ -55,7 +55,7 @@ class Book(models.Model):
         """
         Returns the url to access a detail record for this book.
         """
-        return reverse('book-detail', args=[str(self.id)])
+        return reverse('catalog:book-detail', args=[str(self.id)])
 
     def display_genre(self):
         """
@@ -63,6 +63,9 @@ class Book(models.Model):
         """
         return ', '.join([ genre.name for genre in self.genre.all()[:3] ])
     display_genre.short_description = 'Genre'
+
+    class Meta:
+        unique_together = ("id", "author")
 
 
 class BookInstance(models.Model):
@@ -110,7 +113,7 @@ class Author(models.Model):
         """
         Returns the url to access a particular author instance.
         """
-        return reverse('author-detail', args=[str(self.id)])
+        return reverse('catalog:author-detail', args=[str(self.id)])
 
 
     def __str__(self):
