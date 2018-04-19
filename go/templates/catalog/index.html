@@ -14,6 +14,8 @@
     <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
     <li><a href="{% url 'catalog:authors' %}"><strong>Authors:</strong></a> {{ num_authors }}</li>
   </ul>
+  <p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+  <hr>
 
   {% include 'catalog/book_list.html' %}
 
