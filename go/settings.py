@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'scrumboard.apps.ScrumboardConfig',
     'home.apps.HomeConfig',
     'catalog.apps.CatalogConfig',
     'blog.apps.BlogConfig',
