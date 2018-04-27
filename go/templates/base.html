@@ -25,6 +25,7 @@
           <li><a href="{% url 'polls:index' %}">Polls</a></li>
           <li><a href="{% url 'catalog:index' %}">Catalog</a></li>
           <li><a href="{% url 'blog:index' %}">Blog</a></li>
+          <li><a href="{% url 'scrumboard:index' %}">Scrumboard</a></li>
           <li><a href="{% url 'home:index' %}test/">Redirect link to Catalog</a></li>
           <hr>
           {% if user.is_authenticated %}
