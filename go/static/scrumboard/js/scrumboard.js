@@ -5,6 +5,7 @@
   function ScrumboardController($scope, $http) {
     $scope.add = function(list, title) {
       var card = {
+        list: list.id,
         title: title
       };
       $http.post('/scrumboard/cards/', card).then(
