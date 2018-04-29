@@ -54,3 +54,14 @@ ul {
 .flex button {
   flex-basis: auto;
 }
+.custom-width {
+  width: 100%;
+  min-width: 100%;
+}
+.custom-width button{
+  width: 50%;
+  min-width: 50%;
+}
+.btn {
+  border: 1px solid #a7a7a7
+}
