@@ -10,6 +10,6 @@ router.register(r'cards', CardViewSet)
 
 app_name = 'scrumboard'
 urlpatterns = [
-    re_path('^$', TemplateView.as_view(template_name="scrumboard/index.html"), name="index"),
+    path('', TemplateView.as_view(template_name="scrumboard/index.html"), name="index"),
 ]
 urlpatterns += router.urls
