@@ -1,12 +1,15 @@
 <div class="card" ng-hide="edit" ng-click="edit=true">
-  <h4>{{ card.title }}</h4>
+  <h5>{{ card.title }}</h5>
   <span class="description">{{ card.description }}</span>
 </div>
-<div class="card" ng-show="edit">
+<div class="card" ng-show="edit" ng-model-options="modelOptions">
   <div class="flex">
-    <label><strong>Title:&nbsp;</strong></label>
-    <input class="form-control" type="text" ng-model="card.title">
+    <label class="col-form-label"><strong>Title:&nbsp;</strong></label>
+    <input class="form-control" type="text" ng-model="card.title" ng-change="update()">
   </div>
-  <textarea class="form-control" ng-model="card.description" placeholder="Enter description.."></textarea>
-  <button class="btn" ng-click="edit=false">Close</button>
+  <textarea class="form-control" ng-model="card.description" ng-change="update()" placeholder="Enter description.."></textarea>
+  <div class="btn-group custom-width" role="group">
+    <button class="btn" ng-click="edit=false">Close</button>
+    <button class="btn" ng-click="delete()">Delete Card</button>
+  </div>
 </div>
