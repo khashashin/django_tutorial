@@ -65,3 +65,9 @@ ul {
 .btn {
   border: 1px solid #a7a7a7
 }
+.top-menu {
+  display: block;
+  float: left;
+  padding: 7px;
+  margin: 7px;
+}

@@ -10,12 +10,15 @@
 {% endblock %}
 
 {% block content %}
-        <a href="lists" target="_blank" class="top-menu">Lists</a><br>
-        <a href="cards" target="_blank" class="top-menu">Cards</a>
-        <hr>
           <div ng-app="scrumboard.demo">
             {% verbatim %}
             <div ng-controller="ScrumboardController">
+              <a href="lists" target="_blank" class="top-menu">Lists</a>
+              <a href="cards" target="_blank" class="top-menu">Cards</a>
+              <a class="btn float-right" ng-click="login()">Login</a>
+              <a class="btn float-right" href="/auth_api/logout">Logout</a>
+              <br>
+              <hr>
               <div class="block list" ng-repeat="list in data">
                 <h3>{{list.name}}</h3>
                 <ul>

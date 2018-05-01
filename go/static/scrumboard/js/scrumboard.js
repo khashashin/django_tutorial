@@ -9,14 +9,17 @@
         title: title
       };
       $http.post('/scrumboard/cards/', card).then(
-          function(response) {
-            list.cards.push(response.data);
-          },
-          function() {
-            alert('Could not add card');
-          }
-        );
-      };
+        function(response) {
+          list.cards.push(response.data);
+        },
+        function() {
+          alert('Could not add card');
+        }
+      );
+    };
+    $scope.login = function() {
+      $http.post('/auth_api/login/', {username: '', password: ''});
+    };
     $scope.data = [];
     $http.get('/scrumboard/lists/').then(function(response) {
       $scope.data = response.data;

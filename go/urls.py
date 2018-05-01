@@ -29,5 +29,6 @@ urlpatterns = [
     path('catalog/', include('catalog.urls')),
     path('test/', RedirectView.as_view(url='/catalog/', permanent=True)),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('scrumboard/', include('scrumboard.urls'))
+    path('scrumboard/', include('scrumboard.urls')),
+    re_path(r'^auth_api/', include('auth_api.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
