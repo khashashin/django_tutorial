@@ -18,7 +18,7 @@
       );
     };
     $scope.login = function() {
-      $http.post('/auth_api/login/', {username: '', password: ''});
+      $http.post('/auth_api/login/', {username: 'khashashin', password: 'xakep7253614'});
     };
     $scope.data = [];
     $http.get('/scrumboard/lists/').then(function(response) {

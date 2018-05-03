@@ -1,0 +1,16 @@
+<a href="lists" target="_blank" class="top-menu">Lists</a>
+<a href="cards" target="_blank" class="top-menu">Cards</a>
+<br>
+<hr>
+<div class="block list" ng-repeat="list in data">
+  <h3>{{list.name}}</h3>
+  <ul>
+    <li ng-repeat="card in list.cards">
+      <scrumboard-card></scrumboard-card>
+    </li>
+  </ul>
+  <div class="flex">
+    <input class="form-control" type="text" ng-model="new_title">
+    <button class="btn" ng-click="add(list, new_title)">+</button>
+  </div>
+</div>

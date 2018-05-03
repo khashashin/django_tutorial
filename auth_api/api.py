@@ -1,4 +1,6 @@
 from django.contrib.auth import authenticate, login, logout
+from django.views.decorators.csrf import csrf_protect
+from django.utils.decorators import method_decorator
 
 from rest_framework import status, views
 from rest_framework.response import Response
@@ -10,11 +12,11 @@ class LoginView(views.APIView):
 
     def post(self, request):
         user = authenticate(
-            username=request.data.get(username),
-            password=request.data.get(password)
+            username=request.data.get("username"),
+            password=request.data.get("password")
         )
 
-        if user in None or not user.is_active:
+        if user is None or not user.is_active:
             return Response({
                 'status': 'Unauthorized',
                 'message': 'Username or password incorrect'
