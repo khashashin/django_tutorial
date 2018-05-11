@@ -12,4 +12,18 @@
     <button class="btn" ng-click="edit=false">Close</button>
     <button class="btn" ng-click="delete()">Delete Card</button>
   </div>
+  <hr>
+    <div class="input-group">
+      <!-- <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">List:&nbsp;</label>
+      </div> -->
+      <select ng-options="list as list.name for list in data" ng-model="destList" class="custom-select" id="inputGroupSelect01">
+      </select>
+      <!-- <div class="input-group-append">
+        <button ng-click="move()" class="btn" type="button">Move</button>
+      </div> -->
+      <div class="input-group-append">
+        <button ng-click="move()" class="btn" type="button" style="margin-top: 0;">Move</button>
+      </div>
+    </div>
 </div>

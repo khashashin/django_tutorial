@@ -71,3 +71,8 @@ ul {
   padding: 7px;
   margin: 7px;
 }
+
+.cust_brd {
+  border-top-right-radius: .25rem!important;
+  border-bottom-right-radius: .25rem!important;
+}
